@@ -7,10 +7,11 @@ ZSH_CUSTOM=$HOME/.dotfiles/misc/oh-my-zsh-custom/themes
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-ZSH_THEME="agnoster"
+# ZSH_THEME="agnoster"
+ZSH_THEME="robbyrussell"
 
 # Hide username in prompt
-DEFAULT_USER=`whoami`
+# DEFAULT_USER=`whoami`
 
 # Set to this to use case-sensitive completion
 # CASE_SENSITIVE="true"

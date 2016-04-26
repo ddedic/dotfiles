@@ -19,7 +19,8 @@ alias cu="composer update"
 alias cr="composer require"
 alias ci="composer install"
 alias cda="composer dump-autoload -o"
-alias hostfile="sudo vi /etc/hosts"
+alias vihosts="sudo vi /etc/hosts"
+alias hostfile="sudo hostfile"
 
 # Homestead
 alias homestead='function __homestead() { (cd ~/Homestead && vagrant $*); unset -f __homestead; }; __homestead'
