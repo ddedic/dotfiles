@@ -1,0 +1,112 @@
+#!/bin/bash
+
+#install zsh
+echo 'install oh-my-zhs'
+echo '-----------------'
+rm -rf $HOME/.oh-my-zsh
+curl -L http://install.ohmyz.sh | sh
+
+#symlink zsh prefs
+rm $HOME/.zshrc
+ln -s $HOME/.dotfiles/shell/.zshrc $HOME/.zshrc
+
+#symlink vim prefs
+rm $HOME/.vimrc
+ln -s $HOME/.dotfiles/shell/.vimrc $HOME/.vimrc
+
+rm $HOME/.vim
+ln -s $HOME/.dotfiles/shell/.vim $HOME/.vim
+
+#fix missing font characters (see https://github.com/robbyrussell/oh-my-zsh/issues/1906)
+cd ~/.oh-my-zsh/themes/
+git checkout d6a36b1 agnoster.zsh-theme
+
+#install composer
+echo 'install composer'
+echo '----------------'
+cd ~/.dotfiles
+curl -sS https://getcomposer.org/installer | php
+echo 'move composer to /usr/local/bin/composer'
+mv -f composer.phar /usr/local/bin/composer
+
+#activate z
+cd ~/.dotfiles/shell
+chmod +x z.sh
+
+#install homebrew
+echo 'install homebrew'
+  echo '----------------'
+echo install homebrew
+sudo rm -rf /usr/local/Cellar /usr/local/.git && brew cleanup
+ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+
+#install wget
+echo 'install wget'
+echo '------------'
+brew install wget --overwrite
+
+#install httpie
+echo 'install httpie'
+echo '------------'
+brew install httpie
+
+#install ncdu
+echo 'install ncdu'
+echo '------------'
+brew install ncdu
+
+#install ack
+echo 'install ack'
+echo '------------'
+brew install ack
+
+#install doctl
+echo 'install doctl'
+echo '-------------'
+brew install doctl
+
+#install brew-cask
+echo 'install brew-cask'
+echo '------------------'
+brew tap caskroom/cask
+brew install brew-cask
+
+#install some nice quicklook plugins
+echo 'install some nice quicklook plugins'
+echo '-----------------------------------'
+brew cask install --force qlcolorcode qlstephen qlmarkdown quicklook-json qlprettypatch quicklook-csv betterzipql webp-quicklook suspicious-package
+
+#install envoy
+echo 'install laravel envoy'
+echo '---------------------'
+composer global require "laravel/envoy=~1.0"
+
+#install php-cs-fixer
+echo 'install php-cs-fixer'
+echo '--------------------'
+composer global require fabpot/php-cs-fixer
+
+#install php 7.0
+echo 'install php 7.0'
+echo '---------------'
+curl -s http://php-osx.liip.ch/install.sh | bash -s 7.0
+
+echo '++++++++++++++++++++++++++++++'
+echo '++++++++++++++++++++++++++++++'
+echo 'all done'
+echo 'Things to do to make the agnoster terminal theme work:'
+
+#patch font contains right characters for promt
+echo '1. install menlo patched font included in ~/.dotfiles/misc https://gist.github.com/qrush/1595572/raw/Menlo-Powerline.otf' 
+
+#install solarized http://ethanschoonover.com/solarized
+echo '2. install patched solarized theme included in ~/.dotfiles/misc'
+
+echo '++++++++++++++++++++++++++++++'
+echo 'Some optional tidbits'
+
+echo '1. set some sensible os x defaults by running: $HOME/.dotfiles/osx/set-defaults.sh'
+echo '2. make a .dotfiles-custom/shell/.aliases for your personal commands'
+
+echo '++++++++++++++++++++++++++++++'
+echo '++++++++++++++++++++++++++++++'
