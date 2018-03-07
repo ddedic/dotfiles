@@ -14,6 +14,7 @@ alias phpspec="vendor/bin/phpspec run"
 alias phpunit="vendor/bin/phpunit"
 alias behat="vendor/bin/behat"
 alias a="php artisan"
+alias dominik="php artisan"
 alias c="composer"
 alias cu="composer update"
 alias cr="composer require"
@@ -21,6 +22,9 @@ alias ci="composer install"
 alias cda="composer dump-autoload -o"
 alias vihosts="sudo vi /etc/hosts"
 alias hostfile="sudo hostfile"
+
+alias pcf="php-cs-fixer --verbose fix"
+alias gpr="grumphp run"
 
 # Homestead
 alias homestead='function __homestead() { (cd ~/Homestead && vagrant $*); unset -f __homestead; }; __homestead'
@@ -60,3 +64,12 @@ alias glog="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset
 
 # scrape webpage
 alias scrape="scrapeUrl"
+
+# VLC
+alias vlc="/Applications/VLC.app/Contents/MacOS/VLC -I rc"
+
+
+########### Mounts
+# Develop2
+alias m-develop2="sudo sshfs -o allow_other,defer_permissions,IdentityFile=/Users/ddedic/.ssh/id_rsa ddedic@develop2:/var/www /mnt/develop2"
+alias u-develop2="sudo umount /mnt/develop2"

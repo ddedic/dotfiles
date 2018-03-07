@@ -87,6 +87,22 @@ PATH="$NPM_PACKAGES/bin:$PATH"
 unset MANPATH # delete if you already modified MANPATH elsewhere in your config
 MANPATH="$NPM_PACKAGES/share/man:$(manpath)"
 
-export PATH=/usr/local/php5/bin:$PATH
+export GOPATH=/Users/ddedic/gocode
+
 export PATH=$HOME/.dotfiles/bin:$PATH
 export PATH=/Applications/Sublime\ Text.app/Contents/SharedSupport/bin:$PATH
+export PATH=~/.composer/vendor/bin:$PATH
+export PATH="/usr/local/sbin:$PATH"
+PATH="/Users/ddedic/perl5/bin${PATH:+:${PATH}}"; export PATH;
+
+
+PERL5LIB="/Users/ddedic/perl5/lib/perl5${PERL5LIB:+:${PERL5LIB}}"; export PERL5LIB;
+PERL_LOCAL_LIB_ROOT="/Users/ddedic/perl5${PERL_LOCAL_LIB_ROOT:+:${PERL_LOCAL_LIB_ROOT}}"; export PERL_LOCAL_LIB_ROOT;
+PERL_MB_OPT="--install_base \"/Users/ddedic/perl5\""; export PERL_MB_OPT;
+PERL_MM_OPT="INSTALL_BASE=/Users/ddedic/perl5"; export PERL_MM_OPT;
+
+export NVM_DIR="/Users/ddedic/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+
+
+export PATH=${PATH}:/Users/ddedic/Library/Android/sdk/tools:/Users/ddedic/Library/Android/sdk/tools
